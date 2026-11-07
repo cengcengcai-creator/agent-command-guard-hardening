@@ -92,7 +92,7 @@ Same cases, same classifier contract, after the change. Diff the decisions line 
 ## Step 7 — Log, document, roll back
 
 - Log every decision as JSONL: `ts, pid, ppid, cwd, bin, argv, decision`.
-- Log escape-hatch usage too (`OPENCLAW_ALLOW_DESTRUCTIVE=1` or equivalent) as `allow` with a reason.
+- Log escape-hatch usage too (for example `GUARD_ALLOW_DESTRUCTIVE=1`, whatever the local convention is) as `allow` with a reason.
 - Document the bypass surface at the level of the wrapper: absolute paths, nested interpreters, non-inherited `PATH`, direct syscalls.
 - Provide rollback: restore from the byte copies; remember that rollback may itself need the escape hatch.
 
